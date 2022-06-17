@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route, NavLink, Navigate} from 'react-router-dom'
 import {Home} from '../components/Home'
 import {About} from '../components/About'
 import { Dashboard } from '../components/Dashboard'
+import { Header } from '../components/Header'
 import logo from '../emi.jpg';
 
 function Navigation() {
@@ -26,6 +27,11 @@ function Navigation() {
                     Dashboard
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink to='/header' className={({isActive})=>isActive ? 'nav-active' : ''}>
+                    Header
+                  </NavLink>
+                </li>
           </ul>
       </nav>
         <Routes>
@@ -33,6 +39,7 @@ function Navigation() {
             <Route path='/*' element={<Navigate to='/home' replace/> } />
             <Route path='about' element={<About/>} />
             <Route path='dashboard' element={<Dashboard/>} />
+            <Route path='header' element={<Header/>} />
         </Routes>
       </BrowserRouter>
     
